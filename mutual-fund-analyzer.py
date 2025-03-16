@@ -355,7 +355,14 @@ if 'selected_scheme_code' in st.session_state:
                     xaxis_title="Date",
                     yaxis_title="NAV (₹)",
                     hovermode="x unified",
-                    height=500
+                    height=500,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(raw_fig, use_container_width=True)
@@ -468,7 +475,14 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     xaxis_title="Date",
                     yaxis_title="Return (%)",
                     hovermode="x unified",
-                    height=400
+                    height=400,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(roll_fig1, use_container_width=True)
@@ -525,7 +539,14 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     xaxis_title="Date",
                     yaxis_title="Return (%)",
                     hovermode="x unified",
-                    height=400
+                    height=400,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(roll_fig3, use_container_width=True)
@@ -579,7 +600,14 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     xaxis_title="Date",
                     yaxis_title="Return (%)",
                     hovermode="x unified",
-                    height=400
+                    height=400,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(roll_fig6, use_container_width=True)
@@ -654,7 +682,14 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     xaxis_title="Date",
                     yaxis_title="Volatility (%)",
                     hovermode="x unified",
-                    height=400
+                    height=400,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(vol_fig, use_container_width=True)
@@ -712,7 +747,14 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     xaxis_title="Date",
                     yaxis_title="Drawdown (%)",
                     hovermode="x unified",
-                    height=400
+                    height=400,
+                    legend=dict(
+                    orientation="h",
+                    yanchor="bottom",
+                    y=1.02,
+                    xanchor="right",
+                    x=1
+                )
                 )
                 
                 st.plotly_chart(dd_fig, use_container_width=True)
