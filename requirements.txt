@@ -1,8 +1,8 @@
-streamlit
-matplotlib
-pandas
-requests
-plotly
-yfinance
-ipython
+streamlit==1.43.2
+matplotlib==3.10.1
+pandas==2.2.3
+requests==2.32.3
+plotly==6.0.0
+yfinance==0.2.54
+ipython==9.0.2
 git+https://github.com/shaktisd/quantstats.git
