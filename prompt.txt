@@ -1,0 +1,68 @@
+
+Create a python streamlit application to analyze mutual fund data.
+Step 1. Given MF API to get fund details, cache the output from api and show a text box
+where user can type the fund name and as user types show suggestion for fund names starting with the 
+given search string. As user types change the suggestions accordingly.
+
+API 1: https://api.mfapi.in/mf
+Sample Output:
+[
+  {
+    "schemeCode": 122640,
+    "schemeName": "PPFAS Mutual Fund",
+    "isinGrowth": null,
+    "isinDivReinvestment": null
+  },
+  {
+    "schemeCode": 100028,
+    "schemeName": "Grindlays Super Saver Income Fund-GSSIF-Quaterly Dividend",
+    "isinGrowth": null,
+    "isinDivReinvestment": null
+  },
+  {
+    "schemeCode": 100029,
+    "schemeName": "Grindlays Super Saver Income Fund-GSSIF-Growth",
+    "isinGrowth": null,
+    "isinDivReinvestment": null
+  }
+]
+
+
+Step 2. Once a fund name is selected in step 1, call API 2 to get fund details based on the select fund.
+API 2 URL is created based on selected fund schemeCode as shown below
+
+API 2 : https://api.mfapi.in/mf/<schemeCode>
+Example API 2 : Fund selected in Step 1 = PPFAS Mutual Fund
+API 2 URL :  https://api.mfapi.in/mf/122640
+
+Step 3 : Make call to API 2 created in step 2 and show the fund details 
+API 2 URL :  https://api.mfapi.in/mf/122640
+API 2 output : 
+{
+  "meta": {
+    "fund_house": "PPFAS Mutual Fund",
+    "scheme_type": "360 ONE Mutual Fund",
+    "scheme_category": "Formerly Known as IIFL Mutual Fund",
+    "scheme_code": 122640,
+    "scheme_name": "Parag Parikh Flexi Cap Fund - Regular Plan - Growth",
+    "isin_growth": "INF879O01019",
+    "isin_div_reinvestment": null
+  },
+  "data": [
+    {
+      "date": "13-03-2025",
+      "nav": "76.38010"
+    },
+    {
+      "date": "12-03-2025",
+      "nav": "76.84980"
+    },
+    {
+      "date": "11-03-2025",
+      "nav": "76.57750"
+    },
+  ]
+}
+
+Step 4: Show graph of timeseries data of the fund along with fund details . 
+

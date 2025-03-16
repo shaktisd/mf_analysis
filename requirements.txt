@@ -1,0 +1,7 @@
+streamlit
+matplotlib
+pandas
+requests
+plotly
+yfinance
+git+https://github.com/shaktisd/quantstats.git
