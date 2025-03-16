@@ -14,8 +14,8 @@ warnings.filterwarnings('ignore')
 
 def create_report(fund_df, benchmark_df, fund_name, benchmark_name,temp_file_name):
     
-    fund_data = fund_df.copy()
-    benchmark_data = benchmark_df.copy()
+    fund_data = fund_df[['date','nav']].copy()
+    benchmark_data = benchmark_df[['date','close']].copy()
     fund_data['date'] = pd.to_datetime(fund_data['date'])
     benchmark_data['date'] = pd.to_datetime(benchmark_data['date'])
     
@@ -30,7 +30,7 @@ def create_report(fund_df, benchmark_df, fund_name, benchmark_name,temp_file_nam
     # Filter both dataframes to keep only common dates
     fund_data = fund_data.loc[common_dates]
     benchmark_data = benchmark_data.loc[common_dates]
-
+    fund_data.to_csv("test_fund_data.csv")
     fund_data = fund_data.pct_change().dropna()
     fund_data = fund_data.iloc[:,0] # convert to series
 
