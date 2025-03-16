@@ -4,4 +4,5 @@ pandas
 requests
 plotly
 yfinance
+ipython
 git+https://github.com/shaktisd/quantstats.git
