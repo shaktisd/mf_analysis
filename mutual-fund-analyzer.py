@@ -268,7 +268,7 @@ if 'selected_scheme_code' in st.session_state:
                 y=filtered_df['nav'],
                 mode='lines',
                 name=f"{st.session_state.selected_fund_name}",
-                line=dict(color='blue')
+                line=dict(color='#1987b8')
             ))
             
             # Add benchmark trace if data is available
@@ -294,7 +294,7 @@ if 'selected_scheme_code' in st.session_state:
                         y=normalized_nav,
                         mode='lines',
                         name=f"{st.session_state.selected_fund_name}",
-                        line=dict(color='blue')
+                        line=dict(color='#1987b8')
                     ))
                     
                     # Add normalized benchmark trace
@@ -303,7 +303,7 @@ if 'selected_scheme_code' in st.session_state:
                         y=normalized_benchmark,
                         mode='lines',
                         name=f"BSE 500 Index",
-                        line=dict(color='red')
+                        line=dict(color='#ec9e56')
                     ))
                     
                     # Show comparison table
@@ -458,7 +458,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=df['1m_rolling'],
                     mode='lines',
                     name=f"{st.session_state.selected_fund_name}",
-                    line=dict(color='blue')
+                    line=dict(color='#1987b8')
                 ))
                 
                 # Add benchmark trace
@@ -467,7 +467,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=full_benchmark['1m_rolling'],
                     mode='lines',
                     name="BSE 500 Index",
-                    line=dict(color='red')
+                    line=dict(color='#ec9e56')
                 ))
                 
                 roll_fig1.update_layout(
@@ -522,7 +522,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=df['3m_rolling'],
                     mode='lines',
                     name=f"{st.session_state.selected_fund_name}",
-                    line=dict(color='blue')
+                    line=dict(color='#1987b8')
                 ))
                 
                 # Add benchmark trace
@@ -531,7 +531,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=full_benchmark['3m_rolling'],
                     mode='lines',
                     name="BSE 500 Index",
-                    line=dict(color='red')
+                    line=dict(color='#ec9e56')
                 ))
                 
                 roll_fig3.update_layout(
@@ -583,7 +583,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=df['6m_rolling'],
                     mode='lines',
                     name=f"{st.session_state.selected_fund_name}",
-                    line=dict(color='blue')
+                    line=dict(color='#1987b8')
                 ))
                 
                 # Add benchmark trace
@@ -592,7 +592,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=full_benchmark['6m_rolling'],
                     mode='lines',
                     name="BSE 500 Index",
-                    line=dict(color='red')
+                    line=dict(color='#ec9e56')
                 ))
                 
                 roll_fig6.update_layout(
@@ -665,7 +665,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=df['volatility_30d'],
                     mode='lines',
                     name=f"{st.session_state.selected_fund_name}",
-                    line=dict(color='blue')
+                    line=dict(color='#1987b8')
                 ))
                 
                 # Add benchmark volatility trace
@@ -674,7 +674,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=full_benchmark['volatility_30d'],
                     mode='lines',
                     name="BSE 500 Index",
-                    line=dict(color='red')
+                    line=dict(color='#ec9e56')
                 ))
                 
                 vol_fig.update_layout(
@@ -730,7 +730,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=df['drawdown'],
                     mode='lines',
                     name=f"{st.session_state.selected_fund_name}",
-                    line=dict(color='blue')
+                    line=dict(color='#1987b8')
                 ))
                 
                 # Add benchmark drawdown trace
@@ -739,7 +739,7 @@ if 'selected_scheme_code' in st.session_state and fund_details:
                     y=full_benchmark['drawdown'],
                     mode='lines',
                     name="BSE 500 Index",
-                    line=dict(color='red')
+                    line=dict(color='#ec9e56')
                 ))
                 
                 dd_fig.update_layout(
