@@ -30,7 +30,7 @@ def create_report(fund_df, benchmark_df, fund_name, benchmark_name,temp_file_nam
     # Filter both dataframes to keep only common dates
     fund_data = fund_data.loc[common_dates]
     benchmark_data = benchmark_data.loc[common_dates]
-    fund_data.to_csv("test_fund_data.csv")
+    #fund_data.to_csv("test_fund_data.csv")
     fund_data = fund_data.pct_change().dropna()
     fund_data = fund_data.iloc[:,0] # convert to series
 
@@ -38,8 +38,8 @@ def create_report(fund_df, benchmark_df, fund_name, benchmark_name,temp_file_nam
     benchmark_data = benchmark_data.iloc[:,0] # convert to series
 
     # Verify they have same shape now
-    print("Fund data shape:", fund_data.shape)
-    print("Benchmark data shape:", benchmark_data.shape)
+    #print("Fund data shape:", fund_data.shape)
+    #print("Benchmark data shape:", benchmark_data.shape)
     qs.reports.html(fund_data, benchmark_data,
                     title=fund_name,
                     benchmark_title=benchmark_name,

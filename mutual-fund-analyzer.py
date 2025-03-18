@@ -13,6 +13,7 @@ import tempfile
 import os
 import streamlit.components.v1 as components
 
+
 # Set page configuration
 st.set_page_config(
     page_title="Mutual Fund Analyzer",
@@ -92,6 +93,8 @@ with st.container():
     search_term = st.text_input("Type to search for a fund:", key="search_box")
     
     if search_term:
+        print("*" * 100)
+        print(f'Search Query {search_term}')
         # Filter funds based on search term (case-insensitive)
         filtered_funds = [
             fund for fund in st.session_state.all_funds
@@ -123,6 +126,7 @@ with st.container():
 
 # Step 2 & 3: Display fund details if a fund is selected
 if 'selected_scheme_code' in st.session_state:
+    print(f'Selected fund {st.session_state.selected_fund_name}')
     st.markdown("---")
     st.subheader(f"Step 2 & 3: Fund Details - {st.session_state.selected_fund_name}")
     
@@ -147,7 +151,7 @@ if 'selected_scheme_code' in st.session_state:
                 {"Field": "ISIN (Growth)", "Value": meta.get('isin_growth', 'N/A')},
                 {"Field": "ISIN (Dividend Reinvestment)", "Value": meta.get('isin_div_reinvestment', 'N/A') or 'N/A'}
             ])
-            
+            meta_df = meta_df.astype(str)
             st.table(meta_df)
         
         # Step 4: Display NAV data and graph
@@ -236,7 +240,9 @@ if 'selected_scheme_code' in st.session_state:
                 "All Time": None
             }
             
-            selected_period = st.selectbox("Select time period for graph:", list(time_periods.keys()))
+            selected_period = st.selectbox("Select time period for graph:", 
+                                           list(time_periods.keys()),
+                                           index=3)# Index 3 corresponds to "1 Year"
             days = time_periods[selected_period]
             
             if days:
@@ -256,8 +262,8 @@ if 'selected_scheme_code' in st.session_state:
             
             print(f"start date {start_date} end date {end_date}")
             #save data
-            filtered_df.to_csv(f"fund_data.csv", index=False)
-            benchmark_data.to_csv("benchmark_data.csv", index=False)
+            #filtered_df.to_csv(f"fund_data.csv", index=False)
+            #benchmark_data.to_csv("benchmark_data.csv", index=False)
             
             # Create a figure with multiple traces for comparison
             fig = go.Figure()
